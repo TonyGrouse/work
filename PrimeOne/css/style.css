@@ -1030,7 +1030,7 @@ body.ie .ibg img {
     left: -120%;
     top: 0;
     background: #fff;
-    padding: 65px 10px 0px 15px;
+    padding: 115px 10px 0px 60px;
     -webkit-transition: all 0.6s ease 0s;
     -moz-transition: all 0.6s ease 0s;
     -ms-transition: all 0.6s ease 0s;
@@ -1040,6 +1040,12 @@ body.ie .ibg img {
   }
   .header .header-menu.active {
     left: 0;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .header .header-menu {
+    padding: 75px 10px 0px 20px;
   }
 }
 
@@ -1066,13 +1072,6 @@ body.ie .ibg img {
   letter-spacing: 0;
 }
 
-@media (max-width: 991.98px) {
-  .header-top__link a {
-    font-size: 12px;
-    line-height: 18px;
-  }
-}
-
 @media (max-width: 767.98px) {
   .header-top {
     -webkit-box-pack: end;
@@ -1082,6 +1081,7 @@ body.ie .ibg img {
   }
   .header-top__link a {
     margin-top: 20px;
+    font-size: 20px;
   }
   .header-top__lang {
     margin-bottom: 12.5px;
@@ -1093,7 +1093,7 @@ body.ie .ibg img {
     padding-top: 13px;
   }
   .header-top__link a {
-    font-size: 9px;
+    font-size: 13px;
   }
 }
 
@@ -1101,7 +1101,7 @@ body.ie .ibg img {
   margin: 0px 16px 0px  0px;
   padding: 4px;
   font-family: 'Bebas';
-  font-size: 15px;
+  font-size: 13px;
   line-height: 19px;
   color: #000;
 }
@@ -1109,13 +1109,6 @@ body.ie .ibg img {
 .lang.active {
   background: #000;
   color: #fff;
-}
-
-@media (max-width: 991.98px) {
-  .lang {
-    font-size: 60px;
-    line-height: 64px;
-  }
 }
 
 .header-bottom {
@@ -1209,7 +1202,7 @@ body.ie .ibg img {
     margin: 0px;
   }
   .header-bottom__list li:nth-child(1), .header-bottom__list li:nth-child(2), .header-bottom__list li:nth-child(3), .header-bottom__list li:nth-child(4), .header-bottom__list li:nth-child(5), .header-bottom__list li:nth-child(6) {
-    margin: 2.5px 0px;
+    margin: 10px 0px;
   }
   .header-bottom__logo {
     margin: 0px 0px;
@@ -1228,7 +1221,7 @@ body.ie .ibg img {
     margin-top: -13px;
   }
   .header-bottom__logo img {
-    width: 100px;
+    width: 120px;
   }
   .header-bottom__text {
     letter-spacing: 5px;
