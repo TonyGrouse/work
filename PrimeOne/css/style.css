@@ -1114,6 +1114,7 @@ body.ie .ibg img {
 @media (max-width: 991.98px) {
   .lang {
     font-size: 60px;
+    line-height: 64px;
   }
 }
 
