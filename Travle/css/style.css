@@ -1537,6 +1537,15 @@ body.ie .ibg img {
     -ms-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+
+@media (max-width: 767.98px) and (max-width: 479.98px) {
+  .menu__body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
   .menu__list {
     display: -webkit-box;
     display: -moz-box;
@@ -1680,6 +1689,12 @@ body.ie .ibg img {
   width: 1px;
   height: 11px;
   background-color: #767676;
+}
+
+@media (max-width: 479.98px) {
+  .footer__nav-link::after {
+    display: none;
+  }
 }
 
 .footer__nav-link::before {
@@ -2166,12 +2181,7 @@ body {
 
 @media (max-width: 767.98px) {
   .about2__title::before {
-    width: 220px;
-    top: 40px;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
+    display: none;
   }
 }
 
