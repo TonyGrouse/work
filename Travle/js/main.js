@@ -18,19 +18,19 @@ $(document).ready(function() {
 //SLIDERS
 if($('.slider').length>0){
 	$('.slider').slick({
-	arrows:false,
+		arrows:false,
         dots: true,
         adaptiveHeight: true,
         slidesToShow: 4,            // сколько слайдов показать
         slidesToScroll: 4,          // сколько слайдов прокручивать
-        speed: 100,                // скорость прокрутки
+        speed: 1000,                // скорость прокрутки
         easing: 'linear',           // легкость прокрутки
         infinite: true,             // бесконечность прокрутки
         draggable: true,            // позволяет свайпать мышкой
         swipe: true,                // позволяет свайпать на телефоне
         touchTreshold: 10,          // как сильно нужно свайпнуть, чтобы переключился слайд
         touchMove: true,            // может выключить параметры свайпа
-        waitForAnimate: false,       // отключает анимацию свайпа при которой пользователь может свайпать быстро
+        waitForAnimate: false,      // отключает анимацию свайпа при которой пользователь может свайпать быстро
         variableWidth: false,       // автоматическая адаптивность слайдера
 		accessibility:false,
 		//asNavFor:'',
@@ -55,7 +55,8 @@ if($('.slider').length>0){
 		]
 	});
 }
-	
+
+//FORMS
 function forms(){
 	//SELECT
 	if($('select').length>0){
@@ -373,7 +374,6 @@ function forms(){
 	$('input.num').focusout(function(event) {
 		maskclear($(this));
 	});
-	
 
 	//CHECK
 	$.each($('.check'), function(index, val) {
@@ -720,6 +720,7 @@ if ($('.gallery').length > 0) {
 	});
 }
 
+
 //POPUP
 $('.pl').click(function (event) {
 	var pl = $(this).attr('href').replace('#', '');
@@ -910,9 +911,6 @@ if (navigator.appVersion.indexOf("Mac") != -1) {
 } else {
 	if ($('.scroll-body').length > 0) { scroll(); }
 }
-
-
-
 
 if ($('.t,.tip').length > 0) {
 	tip();
