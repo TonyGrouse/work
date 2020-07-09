@@ -23,7 +23,7 @@ if($('.slider').length>0){
         adaptiveHeight: true,
         slidesToShow: 4,            // сколько слайдов показать
         slidesToScroll: 4,          // сколько слайдов прокручивать
-        speed: 1000,                // скорость прокрутки
+        speed: 100,                // скорость прокрутки
         easing: 'linear',           // легкость прокрутки
         infinite: true,             // бесконечность прокрутки
         draggable: true,            // позволяет свайпать мышкой
