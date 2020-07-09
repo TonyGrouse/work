@@ -1,9 +1,3 @@
-//@prepros-append jq-start.js
-//@prepros-append sliders.js
-//@prepros-append responsive.js
-//@prepros-append forms.js
-//@prepros-append script.js
-//@prepros-append jq-end.js
 $(document).ready(function() {
 		var w=$(window).outerWidth();
 		var h=$(window).outerHeight();
@@ -29,14 +23,14 @@ if($('.slider').length>0){
         adaptiveHeight: true,
         slidesToShow: 4,            // сколько слайдов показать
         slidesToScroll: 4,          // сколько слайдов прокручивать
-        speed: 1500,                // скорость прокрутки
+        speed: 1000,                // скорость прокрутки
         easing: 'linear',           // легкость прокрутки
         infinite: true,             // бесконечность прокрутки
         draggable: true,            // позволяет свайпать мышкой
         swipe: true,                // позволяет свайпать на телефоне
         touchTreshold: 10,          // как сильно нужно свайпнуть, чтобы переключился слайд
         touchMove: true,            // может выключить параметры свайпа
-        waitForAnimate: true,       // отключает анимацию свайпа при которой пользователь может свайпать быстро
+        waitForAnimate: false,       // отключает анимацию свайпа при которой пользователь может свайпать быстро
         variableWidth: false,       // автоматическая адаптивность слайдера
 		accessibility:false,
 		//asNavFor:'',
@@ -61,31 +55,7 @@ if($('.slider').length>0){
 		]
 	});
 }
-
-// //Adaptive functions
-// $(window).resize(function(event) {
-// 	adaptive_function();
-// });
-// function adaptive_header(w,h) {
-// 		var headerMenu=$('.menu__body');
-// 		var headerInp=$('.input__search');
-// 	if(w<767){
-// 		if(!headerInp.hasClass('done')){
-// 			headerInp.addClass('done').appendTo(headerMenu);
-// 		}
-// 	}else{
-// 		if(headerInp.hasClass('done')){
-// 			headerInp.removeClass('done').prependTo($('.form-block__item_input'));
-// 		}
-// 	}
-// }
-// function adaptive_function() {
-// 		var w=$(window).outerWidth();
-// 		var h=$(window).outerHeight();
-// 	adaptive_header(w,h);
-// }
-// 	adaptive_function();
-//FORMS
+	
 function forms(){
 	//SELECT
 	if($('select').length>0){
@@ -403,49 +373,7 @@ function forms(){
 	$('input.num').focusout(function(event) {
 		maskclear($(this));
 	});
-	/*
-	$.each($('input.date'), function(index, val) {
-		$(this).focus(function(){
-			$(this).inputmask('dd.mm.yyyy',{
-				clearIncomplete: true,
-				placeholder:"_",
-				//yearrange:{'minyear':n-40,'maxyear':n},
-				clearMaskOnLostFocus: true,
-				"onincomplete": function(){maskclear($(this));},
-				"oncomplete": function(){
-					$(this).datepicker("setDate",$(this).val());
-				}
-			});
-			$(this).addClass('focus');
-			$(this).parents('.form-column').addClass('focus');
-			$(this).parent().addClass('focus');
-			$(this).parent().removeClass('err');
-			$(this).removeClass('err');
-		});
-		$(this).focusout(function(event) {
-			maskclear($(this));
-		});
-		$(this).datepicker({
-			dateFormat : "dd.mm.yy",
-			//yearRange: "1915:2015",
-			//defaultDate: '-18Y', 
-			//inDate: '-85Y', 
-			//maxDate: "0Y",
-			beforeShow :function(event){
-				$('.ui-datepicker').show();
-			},
-			onSelect:function(event){
-				if($(this).val()!=$(this).attr('data-value') && $(this).val()!=''){
-					$(this).addClass('focus');
-					$(this).parent().addClass('focus');
-					if($(this).hasClass('l') && $(this).parent().find('.form__label').length==0){
-						$(this).parent().append('<div class="form__label">'+$(this).attr('data-value')+'</div>');
-					}
-				}
-			}
-		});
-	});
-	*/
+	
 
 	//CHECK
 	$.each($('.check'), function(index, val) {
@@ -604,42 +532,6 @@ $('form button[type=submit]').click(function(){
 	});
 	if(er==0){
 		removeFormError(form);
-		/*
-			var messagehtml='';
-		if(form.hasClass('editprofile')){
-			var messagehtml='';
-		}
-		formLoad();
-		*/
-
-		//ОПТРАВКА ФОРМЫ
-		/*
-		function showResponse(html){
-			if(!form.hasClass('nomessage')){
-				showMessage(messagehtml);
-			}
-			if(!form.hasClass('noclear')){
-				clearForm(form);
-			}
-		}
-		var options={
-			success:showResponse
-		};
-			form.ajaxForm(options);
-		
-
-		setTimeout(function(){
-			if(!form.hasClass('nomessage')){
-				//showMessage(messagehtml);
-				showMessageByClass(ms);
-			}
-			if(!form.hasClass('noclear')){
-				clearForm(form);
-			}
-		},0);
-
-		return false;
-		*/
 		if(ms!=null && ms!=''){
 			showMessageByClass(ms);
 			return false;
@@ -827,13 +719,6 @@ if ($('.gallery').length > 0) {
 		// Custom options
 	});
 }
-/*
-CLOUD-ZOOM
-<a rel="position:'right',adjustX:25,adjustY:0,Width: 432" href="img/product/zoom.jpg" class="cloud-zoom product-main-mainimage__item">
-	<img class="cloudzoom-gallery" src="img/product/zoom.jpg" alt="" />
-</a>
-*/
-
 
 //POPUP
 $('.pl').click(function (event) {
@@ -1026,40 +911,7 @@ if (navigator.appVersion.indexOf("Mac") != -1) {
 	if ($('.scroll-body').length > 0) { scroll(); }
 }
 
-/*
-function scrollwhouse(){
-		var scs=100;
-		var mss=50;
-		var bns=false;
-	if(isMobile.any()){
-		scs=10;
-		mss=1;
-		bns=true;
-	}
-	var opt={
-		cursorcolor:"#afafaf",
-		cursorwidth: "5px",
-		background: "",
-		autohidemode:false,
-		railalign: 'left',
-		cursoropacitymax: 1,
-		bouncescroll:bns,
-		cursorborderradius: "0px",
-		scrollspeed:scs,
-		mousescrollstep:mss,
-		directionlockdeadzone:0,
-		cursorborder: "0px solid #fff",
-	};
-	return opt;
-}
-$('.whouse-content-body').niceScroll('.whouse-content-scroll',scrollwhouse());
-$('.whouse-content-body').scroll(function(event) {
-		var s=$(this).scrollTop();
-		var r=Math.abs($(this).outerHeight()-$('.whouse-content-scroll').outerHeight());
-		var p=s/r*100;
-	$('.whouse-content__shadow').css({opacity:1-1/100*p});
-});
-*/
+
 
 
 if ($('.t,.tip').length > 0) {
