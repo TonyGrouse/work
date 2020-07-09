@@ -18,7 +18,7 @@ $(document).ready(function() {
 //SLIDERS
 if($('.slider').length>0){
 	$('.slider').slick({
-		arrows:false,
+	arrows:false,
         dots: true,
         adaptiveHeight: true,
         slidesToShow: 4,            // сколько слайдов показать
