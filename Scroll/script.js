@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const navigationLink = document.querySelectorAll('.navigation__link a'),
-          section = document.querySelectorAll('.section'),
-          wrapper = document.querySelector('.wrapper');
+    const navigationLink = document.querySelectorAll('.navigation__link a');
 
     navigationLink.forEach(link => {
         link.addEventListener('click', e => {
