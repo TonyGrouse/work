@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             window.scrollBy({
                 top: offsetPos,
-                behavior: 'smooth',
+                behavior: 'auto',
             });
         });
     });
